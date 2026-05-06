@@ -46,7 +46,7 @@ const LineAndBarEmission = ({data}) => {
       const formattedEndDate = today.toISOString().split('T')[0];
   
       // Make the API call with the start and end date for last 7 days
-      const response = await axios.get(`http://localhost:5000/api/data/${formattedStartDate}/${formattedEndDate}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/data/${formattedStartDate}/${formattedEndDate}`);
   
       console.log('Last 7 days data:', response.data);
   
@@ -249,7 +249,7 @@ const LineAndBarEmission = ({data}) => {
 
       // Fetch data from API
       const response = await axios.get(
-        `http://localhost:5000/api/data/${startDate}/${endDate}`
+        `${process.env.REACT_APP_API_URL}/data/${startDate}/${endDate}`
       );
 
       console.log("Last 30 days data:", response.data);
@@ -464,7 +464,7 @@ const fetchLastTwelveMonthsData = async () => {
     });
 
     // Fetch the raw API response
-    const response = await axios.get(`http://localhost:5000/api/data/${startDate}/${endDate}`);
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/data/${startDate}/${endDate}`);
     
     // Log raw response
     console.log('Raw API Response:', response.data);

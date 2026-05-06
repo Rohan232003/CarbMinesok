@@ -151,7 +151,7 @@ function NeutralityForm() {
     };
 
     try {
-      const apiEndpoint = formType === 'sink' ? 'http://localhost:5000/api/sinks' : 'http://localhost:5000/api/existing-sinks';
+      const apiEndpoint = formType === 'sink' ? `${process.env.REACT_APP_API_URL}/sinks` : `${process.env.REACT_APP_API_URL}/existing-sinks`;
       const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: {

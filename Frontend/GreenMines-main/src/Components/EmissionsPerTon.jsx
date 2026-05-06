@@ -27,7 +27,7 @@ function EmissionsPerTon() {
       const formattedEndDate = new Date().toISOString().split("T")[0];
 
       const response = await axios.get(
-        `http://localhost:5000/api/data/${formattedStartDate}/${formattedEndDate}`
+        `${process.env.REACT_APP_API_URL}/data/${formattedStartDate}/${formattedEndDate}`
       );
 
       const { electricity, fuelCombustion, shipping, explosion } = response.data;

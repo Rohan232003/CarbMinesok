@@ -37,7 +37,7 @@ export default function CCSCalculator() {
     setResult(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/ccs', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/ccs`, formData);
       setResult(response.data.data);
     } catch (err) {
       setError(err.response?.data?.message || 'An error occurred while calculating CCS');

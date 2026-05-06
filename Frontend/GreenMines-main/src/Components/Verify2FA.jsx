@@ -9,7 +9,7 @@ function Verify2FA() {
 
   const handleVerify = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/verify-2fa', { code });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/verify-2fa`, { code });
       setMessage(response.data.msg);
     } catch (error) {
       setMessage('Verification failed: ' + (error.response?.data?.msg || error.message));

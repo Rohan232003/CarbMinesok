@@ -11,7 +11,7 @@ function Enable2FA() {
 
   const handleEnable2FA = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/2fa/enable', { email });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/2fa/enable`, { email });
       setMessage(response.data.msg);
       setError('');
       navigate('/');

@@ -11,7 +11,7 @@ from Explosives.explosive import predict_7_days_multiple_explosives as predict_7
 from Explosives.explosive import calculate_monthly_summary_and_format as calculate_monthly_summary_and_format_explosives
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/ml/transport', methods=['POST'])
 def ml_transport():
@@ -119,7 +119,7 @@ def ml_fuel():
         }), 500
 
 @app.route('/ml/electricity', methods=['POST'])
-@cross_origin(origins='http://localhost:3000')  # Explicitly allow CORS on this route
+@cross_origin(origins='*')  # Explicitly allow CORS on this route
 def ml_electricity():
     """
     Flask route for the electricity model that accepts input data,

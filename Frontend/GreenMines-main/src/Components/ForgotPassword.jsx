@@ -18,7 +18,7 @@ function ForgotPassword() {
     setError('');
     setSuccess('');
     try {
-      await axios.post('http://localhost:5000/api/forgot-password', { email });
+      await axios.post(`${process.env.REACT_APP_API_URL}/forgot-password`, { email });
       setSuccess('Password reset link sent to your email.');
       setTimeout(() => navigate('/login'), 3000); 
     } catch (error) {

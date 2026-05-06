@@ -10,8 +10,8 @@ require('dotenv').config();
 const transporter = nodemailer.createTransport({
     service: 'GMAIL',
     auth: {
-        user: process.env.AUTHMAIL , // Correct the environment variable name
-        pass:  process.env.AUTHPASS ,// Hardcoded password
+        user: process.env.AUTHMAIL,
+        pass: process.env.AUTHPASS,
     },
 });
 
@@ -27,10 +27,7 @@ exports.register = async (req, res) => {
 
         const payload = { user: { id: user.id } };
         
-        // Hardcoded JWT secret key
-        const secretKey = 'yourHardcodedSecretKey';  // Replace with your secret key
-
-        jwt.sign(payload, secretKey, { expiresIn: '1h' }, (err, token) => {
+        jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
             if (err) {
                 console.error('Error signing token:', err);
                 return res.status(500).json({ msg: 'Server error while generating token' });
@@ -59,7 +56,7 @@ exports.login = async (req, res) => {
 
         const mailOptions = {
             to: email,
-            from: 'sujal.shah23@comp.sce.edu.in', // Hardcoded email
+            from: process.env.AUTHMAIL,
             subject: 'Your 2FA Code',
             text: `Your 2FA code is ${twoFactorCode}. It will expire in 10 minutes.`,
         };
@@ -88,8 +85,7 @@ exports.verifyTwoFactor = async (req, res) => {
         await user.save();
 
         const payload = { user: { id: user.id } };
-        const secretKey = 'yourHardcodedSecretKey';  // Replace with your secret key
-        jwt.sign(payload, secretKey, { expiresIn: '1h' }, (err, token) => {
+        jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
             if (err) throw err;
             res.json({ token });
         });
@@ -114,7 +110,7 @@ exports.forgotPassword = async (req, res) => {
         const resetURL = `http://localhost:3000/reset-password?token=${resetToken}`;
         const mailOptions = {
             to: email,
-            from: 'sujal.shah23@comp.sce.edu.in', // Hardcoded email
+            from: process.env.AUTHMAIL,
             subject: 'Password Reset Request',
             text: `You requested a password reset. Click the following link to reset your password: ${resetURL}`,
         };
@@ -171,7 +167,7 @@ exports.enableTwoFactor = async (req, res) => {
 
         const mailOptions = {
             to: email,
-            from: 'sujal.shah23@comp.sce.edu.in', // Hardcoded email
+            from: process.env.AUTHMAIL,
             subject: 'Your 2FA Code',
             text: `Your 2FA code is ${code}. Please keep it secure.`,
         };

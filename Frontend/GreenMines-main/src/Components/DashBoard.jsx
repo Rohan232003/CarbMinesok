@@ -73,7 +73,7 @@ useEffect(() => {
 
       // Make the API call
       const response = await axios.get(
-        `http://localhost:5000/api/data/${formattedStartDate}/${formattedEndDate}`
+        `${process.env.REACT_APP_API_URL}/data/${formattedStartDate}/${formattedEndDate}`
       );
 
       console.log("Week data:", response.data); // Log for debugging
@@ -130,7 +130,7 @@ useEffect(() => {
         const formattedDate = today.toISOString().split('T')[0];
       
       // Make the API call with the current timestamp
-      const response = await axios.get(`http://localhost:5000/api/data/${formattedDate}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/data/${formattedDate}`);
       console.log("one day",response.data);
       
       setData(response.data);

@@ -70,8 +70,8 @@ const fetchDataForDateRange = async (startDate, endDate) => {
     console.log(`Fetching data for range: ${startDate} to ${endDate}`);
 
     const [emissionsResponse, existingSinkResponse] = await Promise.all([
-      axios.get(`http://localhost:5000/api/data/${startDate}/${endDate}`),
-      axios.get(`http://localhost:5000/api/existingsinks/date-range/${startDate}/${endDate}`),
+      axios.get(`${process.env.REACT_APP_API_URL}/data/${startDate}/${endDate}`),
+      axios.get(`${process.env.REACT_APP_API_URL}/existingsinks/date-range/${startDate}/${endDate}`),
     ]);
 
     const totalEmissionCO2 = calculateCO2Sum(emissionsResponse.data);

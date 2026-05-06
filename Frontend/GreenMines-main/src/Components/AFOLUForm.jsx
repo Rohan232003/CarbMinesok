@@ -72,7 +72,7 @@ const AFOLUForm = () => {
 
     try {
       console.log('Sending data:', data);
-      const response = await axios.post('http://localhost:5000/api/afolu', data, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/afolu`, data, {
         headers: {
           'Content-Type': 'application/json',
         },

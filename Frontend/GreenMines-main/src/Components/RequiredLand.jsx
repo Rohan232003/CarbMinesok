@@ -24,7 +24,7 @@ const CarbonSinkForm = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/requiredland ', data);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/requiredland `, data);
       setCalculationResults(response.data.data);
       setError(null); // Reset any previous errors
     } catch (error) {

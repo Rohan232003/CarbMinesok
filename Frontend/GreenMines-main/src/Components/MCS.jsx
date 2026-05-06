@@ -32,7 +32,7 @@ export default function MCSCalculator() {
     setResult(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/mcs', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/mcs`, formData);
       setResult(response.data);
     } catch (err) {
       setError(err.response?.data?.message || 'An error occurred while calculating MCS');

@@ -15,7 +15,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/register', { name, email, password });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, { name, email, password });
       setMessage('Registration successful! Redirecting to setup 2FA...');
       setError('');
       setTimeout(() => navigate("/setup-2fa"), 2000);

@@ -3,12 +3,6 @@ import { Line, Bar } from "react-chartjs-2";
 import CarbonSinkEstimation from "./CarbonSinkEstimation";
 import axios from "axios";
 
-interface SinkEntry {
-_id?: string;
-type: string;
-co2Absorbed: number;
-date?: string;
-}
 
 const SinkGraphs = () => {
   const defaultChartData = {
@@ -84,7 +78,7 @@ const [graphData, setGraphData] = useState({
       const graphDataPromises = periods.map(async (period) => {
         const dateRange = calculateDateRange(period);
         const response = await axios.get(
-          `http://localhost:5000/api/existingsinks/date-range/${dateRange}`
+          `${process.env.REACT_APP_API_URL}/existingsinks/date-range/${dateRange}`
         );
 
         return processGraphData(response.data.existingSinkData, period);
@@ -186,8 +180,8 @@ setLoading(true);
 setError(null);
 
 try {
-let url = `http://localhost:5000/api/existingsinks`; // Default endpoint
-const params: any = {};
+let url = `${process.env.REACT_APP_API_URL}/existingsinks`; // Default endpoint
+const params = {};
 
 // Include the sink type filter in the query parameters
 if (sinkTypeFilter.trim() !== '') {
@@ -196,11 +190,11 @@ params.type = sinkTypeFilter.trim().toLowerCase(); // Ensure consistency in casi
 
 // Handle date-based filtering
 if (startDate && endDate) {
-url = `http://localhost:5000/api/existingsinks/date-range/${startDate}/${endDate}`;
+url = `${process.env.REACT_APP_API_URL}/existingsinks/date-range/${startDate}/${endDate}`;
 } else if (startDate) {
-url = `http://localhost:5000/api/existingsinks/date/${startDate}`;
+url = `${process.env.REACT_APP_API_URL}/existingsinks/date/${startDate}`;
 } else {
-url = `http://localhost:5000/api/existingsinks/date/${getCurrentDate()}`;
+url = `${process.env.REACT_APP_API_URL}/existingsinks/date/${getCurrentDate()}`;
 }
 
 // Fetch data with query parameters
@@ -209,7 +203,7 @@ const response = await axios.get(url, { params });
 console.log("API Response:", response.data);
 
 // Map API response to the required format
-const sinkData = response.data.existingSinkData.map((entry: any) => ({
+const sinkData = response.data.existingSinkData.map((entry) => ({
 _id: entry._id,
 type: entry.vegetationType, // Display vegetation type as sink type
 co2Absorbed: entry.dailySequestrationRate, // Use dailySequestrationRate for CO2 absorption
@@ -240,9 +234,9 @@ setLoading(false);
 
 
 // Handle deleting a sink entry
-const handleDelete = async (id: string) => {
+const handleDelete = async (id) => {
 try {
-await axios.delete(`http://localhost:5000/api/existingsinks/${id}`);
+await axios.delete(`${process.env.REACT_APP_API_URL}/existingsinks/${id}`);
 setSinkEntries(prevEntries =>
 prevEntries.filter(entry => entry._id !== id)
 );

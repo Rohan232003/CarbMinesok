@@ -46,7 +46,7 @@ function DateRangeForm({ onAnalysisComplete }) {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/genai/emissions-analysis', { startDate, endDate });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/genai/emissions-analysis`, { startDate, endDate });
       onAnalysisComplete(response.data);
     } catch (err) {
       setError("Failed to fetch emissions data.");

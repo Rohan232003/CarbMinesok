@@ -69,7 +69,7 @@ function CombinedCode() {
 
   const fetchElectricityData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/electricity-consumption', {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/electricity-consumption`, {
         params: {
           stateName: electricityData.stateName,
           'values.EnergyperTime': electricityData.energyPerTime,
@@ -88,7 +88,7 @@ function CombinedCode() {
 
   const fetchExplosionData = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/explosion-emissions', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/explosion-emissions`, {
         explosiveType: explosionData.explosiveType,
         amount: explosionData.amount * 1000
       });
@@ -103,7 +103,7 @@ function CombinedCode() {
 
   const fetchFuelData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/fuel-combustion', {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/fuel-combustion`, {
         params: {
           fuel: fuelData.fuel,
           'values.Volume': fuelData.volume
@@ -120,7 +120,7 @@ function CombinedCode() {
 
   const fetchShippingData = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/shipping-emissions', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/shipping-emissions`, {
         weight_unit: shippingData.weight_unit,
         weight_value: parseFloat(shippingData.weight_value),
         distance_unit: shippingData.distance_unit,

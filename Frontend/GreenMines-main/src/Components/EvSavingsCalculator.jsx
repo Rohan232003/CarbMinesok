@@ -38,7 +38,7 @@ const EvSavingsCalculator = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/ev', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/ev`, formData);
       setResults(response.data.data);
     } catch (error) {
       console.error('Calculation error', error);

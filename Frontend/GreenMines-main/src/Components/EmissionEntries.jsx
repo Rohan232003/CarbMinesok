@@ -23,7 +23,7 @@ const EmissionEntries = () => {
     const fetchDataForDateRange = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/data/${dateRange.startDate}/${dateRange.endDate}`
+          `${process.env.REACT_APP_API_URL}/data/${dateRange.startDate}/${dateRange.endDate}`
         );
         setData(response.data);
       } catch (error) {
@@ -113,7 +113,7 @@ const EmissionEntries = () => {
     // Handle delete
     const handleDelete = async (id, model) => {
       try {
-        await axios.delete(`http://localhost:5000/api/delete/${id}`);
+        await axios.delete(`${process.env.REACT_APP_API_URL}/delete/${id}`);
         // Refresh data after deletion
         fetchDataForDateRange();
       } catch (error) {

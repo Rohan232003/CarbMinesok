@@ -123,7 +123,7 @@ const RouteForm = () => {
     setResult(null);
   
     try {
-      const response = await axios.post('http://localhost:5000/api/optimize-route', payload);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/optimize-route`, payload);
   
       if (!response.data.route) {
         setError('We cannot travel between these locations via road.');

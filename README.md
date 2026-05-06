@@ -1,93 +1,650 @@
-# GreenMines: Carbon-Footprint-Quantification-and-Neutrality-Pathways for Indian Coal Mines
 
-GreenMines is a web platform designed to help the Indian coal sector achieve carbon neutrality by quantifying emissions, offering actionable insights, and predicting climate impacts. It incorporates advanced AI tools and real-time data tracking to enable better decision-making and emission reduction.
 
-## GreenMines Major Capabilities & Functionalities
+<h1 align="center">GreenMines</h1>
 
-<h2>• <span style="font-size: 20px;">Dynamic Landing Page</span></h2>
-<p>A user-friendly landing page with easy navigation to all platform features.</p>
-<img src="https://github.com/user-attachments/assets/27b4c32a-abd0-43bb-8d7f-01cdab097dd2" alt="Dynamic Landing Page"><br>
-<img src="https://github.com/user-attachments/assets/7ff9c35a-b6ab-4248-a752-1de442aca01b" alt="Dynamic Landing Page" ><br>
-<img src="https://github.com/user-attachments/assets/3f6fef28-755a-4600-893c-da28e303250a"  alt="Dynamic Landing Page" ><br>
-<h2>• <span style="font-size: 20px;">Carbon Footprint Calculations</span></h2>
-<p>Accurate emission calculation for multiple sources:</p>
-<ul>
-  <li><strong>Explosives</strong> - Carbon emissions from the use of explosives in mining operations.</li>
-  <li><strong>Electricity</strong> - Emissions linked to electricity use.</li>
-<br><br>
-  <img src="https://github.com/user-attachments/assets/e1751f8d-f072-4a2a-8c3a-e4bbecad8742" alt="Electricity Emissions"><br>
-  <li><strong>Fuel</strong> - Carbon emissions from fuel consumption.</li>
-  <li><strong>Shipping</strong> - Emissions from transportation used in coal mining.</li>
-        <br><br>
-  <img src="https://github.com/user-attachments/assets/47259945-3809-45e3-a428-89bf4d0986c5" alt="Shipping Emissions"><br>
-  <li><strong>Coal Burning</strong> - Emissions generated during the coal combustion process.</li>
-  <li><strong>Methane Emissions</strong> - Methane leakages and emissions from mining activities.</li>
-        <br><br>
-  <img src="https://github.com/user-attachments/assets/11979de9-14b8-44e4-92ab-cf86f2887479" alt="Methane Emissions"><br>
-</ul>
-<br><br>
-<h2>• <span style="font-size: 20px;">Real-Time Data Tracking Dashboard</span></h2>
-<p>A fully monitored dashboard that tracks and displays live data for various emissions sources in coal mines.</p>
-<img src="https://github.com/user-attachments/assets/f86395d9-5666-4ca3-86b5-bfd7830c124d" alt="Real-Time Dashboard 1"><br>
-<img src="https://github.com/user-attachments/assets/bf6876a4-0b1f-4baa-8b41-3125afa31ea5" alt="Real-Time Dashboard 2"><br>
-<img src="https://github.com/user-attachments/assets/a780a3ef-ed6c-43b4-9a9a-b14ac59a0060" alt="Real-Time Dashboard 3"><br>
-<br><br>
-<h2>• <span style="font-size: 20px;">Machine Learning (ML) Models</span></h2>
-<p>The platform includes <strong>four advanced Machine Learning (ML) models</strong> that predict emissions and guide the coal mines towards achieving carbon neutrality. These models are trained using extensive data and algorithms that provide accurate, real-time predictions for various emission sources:</p>
-<ul>
-  <li><strong>Fuel</strong> - Predicting emissions based on fuel consumption patterns in mining operations.</li>
-  <li><strong>Electricity</strong> - Estimating the emissions tied to electricity usage, crucial for minimizing energy wastage.</li>
-  <li><strong>Transport</strong> - Offering predictions for transportation emissions based on logistical operations.</li>
-  <li><strong>Explosives</strong> - Forecasting emissions from explosives, which play a significant role in mining.</li>
-</ul>
-<p>These models generate both <strong>monthly</strong> and <strong>annual</strong> predictions, allowing stakeholders to track progress toward carbon neutrality. Additionally, the ML models suggest <strong>optimal pathways</strong> to achieve carbon neutrality by identifying trends, inefficiencies, and areas for improvement in the mining processes. The platform’s predictive power ensures a more dynamic approach to emission management, based on ever-changing mining conditions and operational data.</p>
-<img src="https://github.com/user-attachments/assets/aff1c2a5-59e7-4a9b-b424-faec7a93abff" alt="ML Model Screenshot 1"><br>
-<img src="https://github.com/user-attachments/assets/d9f8935d-61aa-40f1-9a71-a8b8de97cf01" alt="ML Model Screenshot 2"><br>
-<img src="https://github.com/user-attachments/assets/5bad6803-87e3-4e65-a3ab-ff6acc7e50ca" alt="ML Model Screenshot 3"><br>
-<br><br><br><br>
+<p align="center">
+  <strong>Carbon Footprint Quantification & Neutrality Pathways for Indian Coal Mines</strong>
+</p>
 
-<h2>• <span style="font-size: 20px;">Emission Impact Analyzer (GenAI with Google Gemini)</span></h2>
-<p>The <strong>Emission Impact Analyzer</strong> is powered by <strong>Generative AI (GenAI)</strong>, designed to process and analyze user input regarding emissions from the past week. By understanding the input data, the tool predicts potential environmental harm caused by these emissions on surrounding ecosystems. It uses historical and real-time emission data to provide actionable insights on how emissions affect local air quality, water sources, and biodiversity. This tool goes beyond simple calculations, offering a deep environmental impact assessment and suggesting mitigation strategies based on the AI's analysis of past trends and predictive models.</p>
-<img src="https://github.com/user-attachments/assets/7c86d4a7-93f6-416b-8f2d-be8c6f2a3525" alt="Emission Impact Analyzer">
-<img src="https://github.com/user-attachments/assets/45dcac89-4a1e-410a-9768-ef71c6540d0a"><br>
-<br><br>
+<p align="center">
+  <a href="#-features">Features</a> •
+  <a href="#%EF%B8%8F-architecture">Architecture</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-getting-started">Getting Started</a> •
+  <a href="#-api-reference">API Reference</a> •
+  <a href="#-project-structure">Project Structure</a> •
+  <a href="#-contributing">Contributing</a> •
+  <a href="#-license">License</a>
+</p>
 
-<h2>• <span style="font-size: 20px;">Carbon Neutrality Pathways</span></h2>
-<p>Several pathways to achieving carbon neutrality in coal mines, including:</p>
-<ul>
-  <li><strong>Carbon Sink Analysis</strong> - Identifying and leveraging natural carbon sinks.</li>
-  <img src="https://github.com/user-attachments/assets/7c3e75ef-170a-4256-9545-1550985036fd" alt="Carbon Sink Analysis 1"><br>
-  <img src="https://github.com/user-attachments/assets/3c8bd90c-70af-4e94-9cbe-8df5d3e4df94" alt="Carbon Sink Analysis 2"><br>
-  <img src="https://github.com/user-attachments/assets/036a0e05-11a8-4faa-9203-0b6baf089cee" alt="Carbon Sink Analysis 3"><br><br><br>
-  <li><strong>Renewable Energy Usage</strong> - Strategies for integrating renewable energy sources.</li>
-  <img src="https://github.com/user-attachments/assets/a69889ae-17b0-4599-b414-e3e708756b31" alt="Renewable Energy 1"><br>
-  <img src="https://github.com/user-attachments/assets/493b19fb-946d-4c8b-a21f-d3253dd76eaa" alt="Renewable Energy 2"><br><br><br>
-  <li><strong>Carbon Capture and Storage (CCS)</strong> - Systems for capturing and storing carbon emissions.</li>
-  <img src="https://github.com/user-attachments/assets/8b9a225b-a298-4b76-bc2d-89b54d49e614" alt="Carbon Capture 1"><br>
-  <img src="https://github.com/user-attachments/assets/2d164b59-2463-4256-a5f8-3548d4dc8871" alt="Carbon Capture 2"><br><br><br>
-  <li><strong>AFOLU Impact</strong> - Assessing the impact of Agriculture, Forestry, and Other Land Use (AFOLU) in carbon management.</li>
-  <img src="https://github.com/user-attachments/assets/7268279d-8c5d-4f88-96d9-5e7a516aa312" alt="AFOLU Impact 1"><br>
-  <img src="https://github.com/user-attachments/assets/4ab9f252-a8f5-4942-a58d-36e0479ff426" alt="AFOLU Impact 2"><br><br><br>
-  <li><strong>EV Fuel Saver</strong> - Optimizing electric vehicle usage to reduce emissions.</li>
-  <img src="https://github.com/user-attachments/assets/2902021e-bc1b-461a-abbc-7a9966f08689" alt="EV Fuel Saver 1"><br>
-  <img src="https://github.com/user-attachments/assets/a5a4d2a9-66e7-4d77-8d6d-fac872d42455" alt="EV Fuel Saver 2"><br><br><br>
-  <li><strong>Methane Capture and Storage System</strong> - Reducing methane emissions by capturing and storing methane.</li>
-  <img src="https://github.com/user-attachments/assets/10d51d91-1992-4217-80f2-72c4b0d8e494" alt="Methane Capture 1"><br>
-  <img src="https://github.com/user-attachments/assets/08c77c56-6ad7-441d-9d89-f0d88b6ab63e" alt="Methane Capture 2"><br><br><br>
-</ul>
-<br><br>
-<h2>• <span style="font-size: 20px;">Carbon Data Report Generation & Analysis</span></h2>
-<p>A feature that generates detailed reports on carbon emissions data, providing in-depth analysis on emission sources and trends. The reports help users understand key insights and assist in making informed decisions to reduce carbon footprints.</p>
-<img src="https://github.com/user-attachments/assets/79c23598-333b-404c-8e31-e2fdcefb4340" alt="Carbon Data Report 1"><br>
-<img src="https://github.com/user-attachments/assets/b2ba3413-09f6-41d3-8aff-8d491281b226" alt="Carbon Data Report 2"><br>
-<img src="https://github.com/user-attachments/assets/c01cf4d8-dc3e-4886-9a41-be61e66d178e" alt="Carbon Data Report 3"><br>
-<br><br>
-<h2>• <span style="font-size: 20px;">AI-Powered Chat Assistant</span></h2>
-<p>A chatbot assistant that provides users with information about the mines, emission statistics, and best practices for reducing carbon footprints.</p>
-<img src="https://github.com/user-attachments/assets/e609db2e-25f6-4de4-aa6f-e5a7b37d9200" alt="AI-Powered Chat Assistant"><br>
-<br><br>
-<h2>• <span style="font-size: 20px;">Route Optimization for Vehicles</span></h2>
-<p>A feature for optimizing vehicle routes used by coal mines, reducing transportation-related emissions.</p>
-<img src="https://github.com/user-attachments/assets/35f48fe0-dee4-4727-b148-36d9eb58512d" alt="Route Optimization"><br>
-<br><br>
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18.0-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React"/>
+  <img src="https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/Python-Flask-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/MongoDB-Mongoose-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
+  <img src="https://img.shields.io/badge/TailwindCSS-3.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="TailwindCSS"/>
+  <img src="https://img.shields.io/badge/Google-Gemini%20AI-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI"/>
+</p>
+
 ---
+
+## 📋 Table of Contents
+
+- [About the Project](#-about-the-project)
+- [Features](#-features)
+- [Architecture](#%EF%B8%8F-architecture)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Environment Variables](#environment-variables)
+  - [Running the Application](#running-the-application)
+- [API Reference](#-api-reference)
+- [ML Models](#-ml-models)
+- [Project Structure](#-project-structure)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
+
+---
+
+## 🌍 About the Project
+
+**GreenMines** is a comprehensive web platform engineered to help the Indian coal mining sector transition toward carbon neutrality. The platform combines real-time emission tracking, predictive machine learning models, and generative AI-powered analytics to deliver a holistic carbon management solution.
+
+Coal mining in India remains a critical contributor to greenhouse gas emissions. GreenMines addresses this by providing mine operators with:
+
+- **Precise emission quantification** across six major sources (electricity, fuel, shipping, explosives, coal burning, methane)
+- **AI-driven environmental impact analysis** using Google Gemini and Cohere AI
+- **Predictive ML models** that forecast future emissions based on 7-day operational data
+- **Six actionable carbon neutrality pathways** including carbon sinks, renewable energy integration, CCS, MCS, AFOLU analysis, and EV fleet optimization
+- **Real-time dashboards and reporting** with automated PDF generation
+
+---
+
+## ✨ Features
+
+### 🔢 Carbon Footprint Calculators
+
+| Calculator | Data Source | Description |
+|-----------|------------|-------------|
+| **Electricity** | CarbonKit API | State-wise electricity emission calculation for all Indian states |
+| **Fuel Combustion** | CarbonKit DEFRA | Multi-fuel emission tracking (petrol, diesel, LPG, etc.) |
+| **Shipping & Transport** | Carbon Interface API | Weight/distance-based transport emissions |
+| **Explosives** | Built-in factors | 9 explosive types with gas-specific breakdowns (CO, CO₂, NOx, H₂S, NH₃) |
+| **Coal Burning** | Built-in factors | 4 coal types (Lignite, Sub-bituminous, Bituminous, Anthracite) |
+| **Methane** | Built-in model | Surface and underground mining with atmospheric condition adjustments |
+
+### 📊 Dashboard & Analytics
+
+- **Real-time tracking dashboard** with daily, weekly, monthly, and yearly views
+- **Interactive charts** — line, bar, donut, and comparative visualizations
+- **Date-range data fetching** with filtering and entry deletion
+- **Per-ton emission analysis** for benchmarking
+
+### 🤖 AI-Powered Features
+
+| Feature | AI Provider | Capability |
+|---------|------------|------------|
+| **Emission Impact Analyzer** | Cohere AI (command-xlarge) | Environmental forensics report: biodiversity hazard, ozone depletion, soil contamination, climate refugees, health risks |
+| **AI Chat Assistant** | Google Gemini Pro | Context-aware chatbot for coal mining sustainability guidance |
+| **Environmental Reports** | Google Gemini Pro | Automated daily/weekly/monthly/yearly comprehensive reports with PDF export |
+
+### 🧪 Machine Learning Predictions
+
+Four trained ML models that accept 7 days of operational data and generate:
+- Daily emission predictions with risk levels (Low / Medium / High / Critical)
+- Monthly and annual emission forecasts
+- Carbon neutrality pathway recommendations
+
+| Model | Input Data | Prediction Output |
+|-------|-----------|-------------------|
+| **Electricity** | Daily kWh + state | State-adjusted emission forecast |
+| **Fuel** | Daily fuel consumption | Combustion emission projections |
+| **Transport** | Daily transport logs | Logistics emission predictions |
+| **Explosives** | Daily explosive usage | Blasting emission forecasts |
+
+### 🌱 Carbon Neutrality Pathways (6 Modules)
+
+1. **Carbon Sink Estimation** — Calculate sequestration rates for vegetation types, analyze existing sinks, estimate land requirements
+2. **Renewable Energy Integration** — Solar, Wind, Hydropower, Hydrogen-Electric cost/benefit analysis with carbon credit calculations
+3. **Carbon Capture & Storage (CCS)** — Post-combustion, Pre-combustion, Oxy-fuel technologies with 10-year financial projections
+4. **Methane Capture & Storage (MCS)** — Flaring, Catalytic Oxidation, Membrane Separation with 3 utilization strategies (energy, hydrogen, LNG)
+5. **AFOLU Analysis** — Agriculture, Forestry, and Other Land Use impact assessment
+6. **EV Fleet Optimization** — ICE vs EV comparison with fuel savings and emission reduction metrics
+
+### 🗺️ Additional Features
+
+- **Route Optimization** — OSRM-powered vehicle route optimization with interactive Leaflet maps
+- **Regenerative Zone Mapping** — Draw and manage regenerative zones on interactive maps
+- **User Profiles** — Cloudinary-hosted profile pictures, CO₂ goals, role management
+- **2FA Authentication** — Email-based two-factor authentication with TOTP support
+- **PDF Report Generation** — Automated, downloadable environmental reports
+
+---
+
+## 🏗️ Architecture
+
+GreenMines follows a **three-tier microservice architecture**:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     CLIENT (Browser)                            │
+│                  React 18 + TailwindCSS                         │
+│                     Port: 3000                                  │
+└───────────────┬─────────────────────────┬───────────────────────┘
+                │ REST API                │ Direct HTTP
+                ▼                         ▼
+┌───────────────────────────┐  ┌─────────────────────────────────┐
+│   BACKEND API SERVER      │  │     ML PREDICTION SERVICE       │
+│   Node.js + Express       │  │     Python + Flask              │
+│   Port: 5000              │  │     Port: 8800                  │
+│                           │  │                                 │
+│  ┌─────────────────────┐  │  │  ┌───────────────────────────┐  │
+│  │  14 Route Files     │  │  │  │  4 ML Models              │  │
+│  │  18 Controllers     │  │  │  │  • Electricity             │  │
+│  │  1 Service Layer    │  │  │  │  • Fuel                    │  │
+│  │  17 Mongoose Models │  │  │  │  • Transport               │  │
+│  └─────────────────────┘  │  │  │  • Explosives              │  │
+└───────────┬───────────────┘  │  └───────────────────────────┘  │
+            │                  └─────────────────────────────────┘
+            ▼
+┌───────────────────────────┐  ┌─────────────────────────────────┐
+│   DATABASE                │  │     EXTERNAL SERVICES           │
+│   MongoDB                 │  │                                 │
+│   Port: 27017             │  │  • CarbonKit API                │
+│   DB: carbon-estimation   │  │  • Carbon Interface API         │
+│                           │  │  • Google Gemini Pro AI         │
+│   17 Collections          │  │  • Cohere AI                    │
+│                           │  │  • OSRM Routing API             │
+│                           │  │  • Cloudinary (File Storage)    │
+└───────────────────────────┘  └─────────────────────────────────┘
+```
+
+### Data Flow
+
+```
+User Input → React Frontend → Express API → External APIs / MongoDB → Response
+                    │
+                    └──→ Flask ML Service → Predictions → Response
+```
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| React | 18.x | UI framework |
+| React Router DOM | 6.x | Client-side routing |
+| TailwindCSS | 3.x | Utility-first CSS |
+| Material UI (MUI) | 5.x | Component library |
+| Framer Motion | 11.x | Animations |
+| Chart.js + react-chartjs-2 | 4.x / 5.x | Data visualization |
+| Leaflet + react-leaflet | 1.9 / 4.2 | Interactive maps |
+| Axios | 1.7 | HTTP client |
+| jsPDF + html2canvas | 2.5 / 1.4 | PDF generation |
+| Lucide React | 0.462 | Icon library |
+
+### Backend
+
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| Node.js + Express | 4.21 | REST API server |
+| Mongoose | 8.8 | MongoDB ODM |
+| JWT (jsonwebtoken) | 9.x | Authentication tokens |
+| bcryptjs | 2.4 | Password hashing |
+| Speakeasy | 2.0 | TOTP-based 2FA |
+| Nodemailer | 6.9 | Email service (2FA, password reset) |
+| Helmet | 7.1 | Security headers |
+| Cloudinary | 2.5 | Image uploads |
+| @google/generative-ai | 0.21 | Google Gemini integration |
+| Axios | 1.7 | External API calls |
+
+### ML Service
+
+| Technology | Purpose |
+|-----------|---------|
+| Python 3.x | Runtime |
+| Flask | Web framework |
+| Flask-CORS | Cross-origin support |
+
+### Database
+
+| Technology | Purpose |
+|-----------|---------|
+| MongoDB | Document database |
+| 17 Collections | Emissions, sinks, users, zones, etc. |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed on your system:
+
+| Software | Minimum Version | Download |
+|---------|----------------|----------|
+| **Node.js** | v18.x or higher | [nodejs.org](https://nodejs.org/) |
+| **npm** | v9.x or higher | Bundled with Node.js |
+| **Python** | v3.8 or higher | [python.org](https://python.org/) |
+| **pip** | Latest | Bundled with Python |
+| **MongoDB** | v6.0 or higher | [mongodb.com](https://www.mongodb.com/try/download/community) |
+| **Git** | Latest | [git-scm.com](https://git-scm.com/) |
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/your-username/GreenMines.git
+cd GreenMines
+```
+
+**2. Install Backend dependencies**
+
+```bash
+cd Backend
+npm install
+```
+
+**3. Install Frontend dependencies**
+
+```bash
+cd ../Frontend/GreenMines-main
+npm install
+```
+
+**4. Install ML Service dependencies**
+
+```bash
+cd ../../Backend/ML
+pip install -r req.txt
+```
+
+### Environment Variables
+
+Create a `.env` file in the `Backend/` directory:
+
+```env
+# ─── Database ────────────────────────────────────────────
+MONGO_URI=mongodb://localhost:27017/carbon-estimation
+
+# ─── Authentication ──────────────────────────────────────
+JWT_SECRET=your_jwt_secret_key_here
+
+# ─── Email Service (Nodemailer) ──────────────────────────
+AUTHMAIL=your_email@gmail.com
+AUTHPASS=your_app_password
+
+# ─── Server Configuration ───────────────────────────────
+PORT=5000
+FRONTEND_URL=http://localhost:3000
+
+# ─── AI Services ─────────────────────────────────────────
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_API_KEY3=your_gemini_api_key_for_reports
+COHERE_API_KEY=your_cohere_api_key
+
+# ─── Cloudinary (Profile Pictures) ───────────────────────
+CLOUD_NAME=your_cloudinary_cloud_name
+CLOUD_KEY=your_cloudinary_api_key
+CLOUD_SECRET=your_cloudinary_api_secret
+```
+
+Create a `.env` file in `Frontend/GreenMines-main/`:
+
+```env
+REACT_APP_BACKEND_URL=http://localhost:5000
+```
+
+> **Note:** For the email service, if using Gmail, you'll need to generate an [App Password](https://support.google.com/accounts/answer/185833) with 2FA enabled on your Google account.
+
+### Running the Application
+
+You need **four terminal windows** to run the complete stack:
+
+**Terminal 1 — Start MongoDB**
+
+```bash
+# macOS (Homebrew)
+brew services start mongodb-community
+
+# Linux
+sudo systemctl start mongod
+
+# Windows
+net start MongoDB
+```
+
+**Terminal 2 — Start Backend Server**
+
+```bash
+cd Backend
+npm run dev
+```
+
+> Server starts at `http://localhost:5000`
+
+**Terminal 3 — Start ML Service**
+
+```bash
+cd Backend/ML
+python app.py
+```
+
+> Flask server starts at `http://localhost:8800`
+
+**Terminal 4 — Start Frontend**
+
+```bash
+cd Frontend/GreenMines-main
+npm start
+```
+
+> React app opens at `http://localhost:3000`
+
+### Verify Installation
+
+| Service | URL | Expected Response |
+|---------|-----|-------------------|
+| Frontend | http://localhost:3000 | GreenMines landing page |
+| Backend API | http://localhost:5000 | Express server running |
+| ML Service | http://localhost:8800 | Flask server running |
+| MongoDB | mongodb://localhost:27017 | Connection successful |
+
+---
+
+## 📡 API Reference
+
+### Authentication
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `POST` | `/api/register` | Register a new user | ❌ |
+| `POST` | `/api/login` | Login (triggers 2FA email) | ❌ |
+| `POST` | `/api/verify-2fa` | Verify 2FA code → receive JWT | ❌ |
+| `POST` | `/api/forgot-password` | Send password reset email | ❌ |
+| `POST` | `/api/reset-password` | Reset password with token | ❌ |
+| `POST` | `/api/enable-2fa` | Enable TOTP-based 2FA | ✅ |
+| `POST` | `/api/setup-2fa` | Generate QR code for 2FA setup | ✅ |
+
+### Emission Calculations
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/electricity-consumption` | Calculate electricity emissions by Indian state |
+| `GET` | `/api/fuel-combustion` | Calculate fuel combustion emissions |
+| `POST` | `/api/shipping-emissions` | Calculate shipping/transport emissions |
+| `POST` | `/api/explosion-emissions` | Calculate explosive emissions |
+| `POST` | `/api/coal-emission` | Calculate coal burning emissions |
+| `POST` | `/api/methane-emission` | Calculate methane emissions (surface/underground) |
+
+### Data Fetching
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/date/:date` | Fetch all emission data for a specific date |
+| `GET` | `/api/date-range/:startDate/:endDate` | Fetch emissions for a date range |
+| `DELETE` | `/api/delete/:id` | Delete a specific emission entry |
+
+### Carbon Neutrality Pathways
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/create-sink` | Create a new carbon sink |
+| `POST` | `/api/create-existing-sink` | Register an existing carbon sink |
+| `POST` | `/api/calculate-renewable` | Calculate renewable energy impact |
+| `POST` | `/api/calculate-ccs` | Calculate Carbon Capture & Storage metrics |
+| `POST` | `/api/calculate-mcs` | Calculate Methane Capture & Storage metrics |
+| `POST` | `/api/afolu` | Calculate AFOLU impact |
+
+### AI & Reports
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/genai-analysis` | Run GenAI emission impact analysis |
+| `POST` | `/api/chatbot` | Send message to AI chatbot |
+| `GET` | `/api/environmental-reports/daily` | Generate daily environmental report |
+| `GET` | `/api/environmental-reports/weekly` | Generate weekly environmental report |
+| `GET` | `/api/environmental-reports/monthly` | Generate monthly environmental report |
+| `GET` | `/api/environmental-reports/yearly` | Generate yearly environmental report |
+
+### Route Optimization
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/optimize-route` | Optimize vehicle routes using OSRM |
+
+### ML Prediction Endpoints (Port 8800)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/ml/electricity` | Predict electricity emissions |
+| `POST` | `/ml/fuel` | Predict fuel emissions |
+| `POST` | `/ml/transport` | Predict transport emissions |
+| `POST` | `/ml/explosive` | Predict explosive emissions |
+
+---
+
+## 🧪 ML Models
+
+### How Predictions Work
+
+Each ML model follows the same pipeline:
+
+```
+7 Days Input Data → Daily Prediction → Risk Assessment → Monthly Aggregation → Neutrality Pathway
+```
+
+### Request Format
+
+```json
+{
+  "days_data": [
+    { "day": 1, "value": 1200 },
+    { "day": 2, "value": 1350 },
+    { "day": 3, "value": 980 },
+    { "day": 4, "value": 1100 },
+    { "day": 5, "value": 1450 },
+    { "day": 6, "value": 1280 },
+    { "day": 7, "value": 1150 }
+  ],
+  "state_name": "Maharashtra"
+}
+```
+
+> **Note:** `state_name` is only required for the electricity model.
+
+### Response Format
+
+```json
+{
+  "status": "success",
+  "monthly_summary": {
+    "total_emissions": 38500.00,
+    "average_daily_emissions": 1283.33,
+    "risk_level": "Moderate",
+    "predictions": [...],
+    "neutrality_recommendations": [...]
+  }
+}
+```
+
+### Risk Level Thresholds
+
+| Level | Color | Description |
+|-------|-------|-------------|
+| 🟢 Low | Green | Emissions within acceptable limits |
+| 🟡 Moderate | Yellow | Emissions approaching threshold |
+| 🟠 High | Orange | Emissions exceed safe limits |
+| 🔴 Critical | Red | Immediate action required |
+
+---
+
+## 📁 Project Structure
+
+```
+GreenMines/
+├── Backend/
+│   ├── config/
+│   │   └── db.js                    # MongoDB connection configuration
+│   ├── controller/
+│   │   ├── Emission.js              # Electricity, fuel, shipping, explosives, coal
+│   │   ├── authController.js        # Register, login, 2FA, password reset
+│   │   ├── methaneController.js     # Surface & underground methane
+│   │   ├── sink.js                  # Sinks, renewables, CCS, MCS
+│   │   ├── genaiController.js       # Cohere AI emission impact analysis
+│   │   ├── chatbot.js               # Google Gemini chatbot
+│   │   ├── datafetching.js          # Date-based data queries
+│   │   ├── environmentalReportController.js  # Report generation
+│   │   ├── routeController.js       # OSRM route optimization
+│   │   ├── userController.js        # Profile, picture upload, CO₂ goals
+│   │   ├── afoluController.js       # AFOLU calculations
+│   │   ├── evCalculationscontroller.js  # EV savings
+│   │   ├── landRequiredController.js    # Land requirements
+│   │   ├── zoneController.js        # Regenerative zones
+│   │   └── ...
+│   ├── models/
+│   │   ├── User.js                  # User schema (auth, 2FA, profile)
+│   │   ├── Electricity.js           # Electricity emission records
+│   │   ├── FuelCombustion.js        # Fuel emission records
+│   │   ├── Shipping.js              # Shipping emission records
+│   │   ├── Explosion.js             # Explosion emission records
+│   │   ├── coalEmission.js          # Coal burning records
+│   │   ├── Methane.js               # Methane emission records
+│   │   ├── Sink.js                  # Carbon sink records
+│   │   ├── ExistingSink.js          # Existing sink records
+│   │   ├── Renewable.js             # Renewable energy records
+│   │   ├── ccs.js                   # CCS calculation records
+│   │   ├── mcs.js                   # MCS calculation records
+│   │   ├── evCalculations.js        # EV savings records
+│   │   ├── Zone.js                  # Regenerative zone records
+│   │   └── ...
+│   ├── routes/
+│   │   ├── emissionRoute.js         # /api/electricity, /api/fuel, ...
+│   │   ├── authRoutes.js            # /api/register, /api/login, ...
+│   │   ├── sinkRoute.js             # /api/create-sink, ...
+│   │   ├── genaiRoute.js            # /api/genai-analysis
+│   │   ├── chatbotRoute.js          # /api/chatbot
+│   │   ├── environmentalReportRoute.js  # /api/environmental-reports/*
+│   │   ├── optimizeRoute.js         # /api/optimize-route
+│   │   └── ...
+│   ├── services/
+│   │   └── geminiReportService.js   # Google Gemini report generation
+│   ├── ML/
+│   │   ├── app.py                   # Flask server (port 8800)
+│   │   ├── Electricity/
+│   │   │   └── electricity.py       # Electricity prediction model
+│   │   ├── Fuel/
+│   │   │   └── fuel.py              # Fuel prediction model
+│   │   ├── Transport/
+│   │   │   └── transport.py         # Transport prediction model
+│   │   ├── Explosives/
+│   │   │   └── explosive.py         # Explosives prediction model
+│   │   └── req.txt                  # Python dependencies
+│   ├── server.js                    # Express app entry point
+│   ├── package.json
+│   └── .env                         # Environment variables
+│
+├── Frontend/
+│   └── GreenMines-main/
+│       ├── public/
+│       ├── src/
+│       │   ├── App.jsx              # Root component with all routes
+│       │   ├── Components/
+│       │   │   ├── Header.jsx           # Landing page hero
+│       │   │   ├── Navbar.jsx           # Navigation bar
+│       │   │   ├── Footer.jsx           # Footer
+│       │   │   ├── EmissionForm.jsx     # Master emission calculator
+│       │   │   ├── DashBoard.jsx        # Real-time dashboard
+│       │   │   ├── Predictions.jsx      # ML predictions interface
+│       │   │   ├── Chatbot.jsx          # AI chatbot
+│       │   │   ├── CCS.jsx             # Carbon Capture & Storage
+│       │   │   ├── MCS.jsx             # Methane Capture & Storage
+│       │   │   ├── RouteFrm.jsx         # Route optimization (Leaflet)
+│       │   │   ├── RegenerativeZoneMap.jsx  # Zone mapping
+│       │   │   ├── Profile.jsx          # User profile management
+│       │   │   ├── Login.jsx            # Authentication
+│       │   │   ├── EnvironmentalReport/ # Report sub-components
+│       │   │   │   ├── ReportDisplay.jsx
+│       │   │   │   ├── ReportStats.jsx
+│       │   │   │   ├── PDFDownloadButton.jsx
+│       │   │   │   └── Charts/
+│       │   │   └── ... (66 components total)
+│       │   ├── pages/
+│       │   │   └── EnvironmentalReportPage.jsx
+│       │   ├── services/
+│       │   │   └── environmentalReportService.jsx
+│       │   ├── index.js
+│       │   └── index.css
+│       ├── tailwind.config.js
+│       ├── package.json
+│       └── .env
+│
+└── README.md
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. **Fork** the repository
+2. **Create** a feature branch
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Commit** your changes with descriptive messages
+   ```bash
+   git commit -m "feat: add new emission calculator for XYZ"
+   ```
+4. **Push** to your branch
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Open** a Pull Request with a detailed description
+
+### Commit Convention
+
+| Prefix | Usage |
+|--------|-------|
+| `feat:` | New feature |
+| `fix:` | Bug fix |
+| `docs:` | Documentation changes |
+| `style:` | Code style/formatting |
+| `refactor:` | Code refactoring |
+| `test:` | Adding/updating tests |
+| `chore:` | Maintenance tasks |
+
+---
+
+## 📄 License
+
+This project is licensed under the **ISC License**. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgements
+
+- [CarbonKit API](https://www.carbonkit.net/) — Electricity and fuel emission factors
+- [Carbon Interface](https://www.carboninterface.com/) — Shipping emission calculations
+- [Google Gemini](https://ai.google.dev/) — Generative AI for chatbot and reports
+- [Cohere AI](https://cohere.com/) — Emission impact analysis
+- [OSRM](http://project-osrm.org/) — Open-source route optimization
+- [Cloudinary](https://cloudinary.com/) — Image hosting and management
+- [Leaflet](https://leafletjs.com/) — Interactive mapping
+
+---
+
+<p align="center">
+  <strong>Built with 💚 for a sustainable future</strong>
+</p>
+
+<p align="center">
+  <a href="#greenmines">⬆ Back to Top</a>
+</p>

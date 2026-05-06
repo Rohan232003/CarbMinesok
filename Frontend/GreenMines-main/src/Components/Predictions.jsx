@@ -48,7 +48,7 @@ function EmissionPredictionPage() {
     try {
       // Fetching data from your Flask API
       const response = await axios.get(
-        `http://localhost:5000/api/data/${startDate}/${endDate}`
+        `${process.env.REACT_APP_API_URL}/data/${startDate}/${endDate}`
       );
 
       const categoryData = response.data[selectedCategory] || [];
@@ -226,13 +226,13 @@ function EmissionPredictionPage() {
   const getFlaskRoute = (category) => {
     switch (category) {
       case "fuelCombustion":
-        return "http://127.0.0.1:8800/ml/fuel";
+        return `${process.env.REACT_APP_ML_API_URL || 'http://127.0.0.1:8800'}/ml/fuel`;
       case "electricity":
-        return "http://127.0.0.1:8800/ml/electricity";
+        return `${process.env.REACT_APP_ML_API_URL || 'http://127.0.0.1:8800'}/ml/electricity`;
       case "explosion":
-        return "http://127.0.0.1:8800/ml/explosive";
+        return `${process.env.REACT_APP_ML_API_URL || 'http://127.0.0.1:8800'}/ml/explosive`;
       case "shipping":
-        return "http://127.0.0.1:8800/ml/transport";
+        return `${process.env.REACT_APP_ML_API_URL || 'http://127.0.0.1:8800'}/ml/transport`;
       default:
         throw new Error("Invalid category selected.");
     }
@@ -247,7 +247,7 @@ function EmissionPredictionPage() {
   
     try {
       // Step 1: Fetch all data from MongoDB API
-      const mongoResponse = await axios.get(`http://localhost:5000/api/data/${startDate}/${endDate}`);
+      const mongoResponse = await axios.get(`${process.env.REACT_APP_API_URL}/data/${startDate}/${endDate}`);
       const { fuelCombustion, electricity, explosion, shipping } = mongoResponse.data;
   
       // Step 2: Format data for each category
@@ -260,13 +260,13 @@ function EmissionPredictionPage() {
       const getFlaskRoute = (category) => {
         switch (category) {
           case "fuelCombustion":
-            return "http://127.0.0.1:8800/ml/fuel";
+            return `${process.env.REACT_APP_ML_API_URL || 'http://127.0.0.1:8800'}/ml/fuel`;
           case "electricity":
-            return "http://127.0.0.1:8800/ml/electricity";
+            return `${process.env.REACT_APP_ML_API_URL || 'http://127.0.0.1:8800'}/ml/electricity`;
           case "explosion":
-            return "http://127.0.0.1:8800/ml/explosive";
+            return `${process.env.REACT_APP_ML_API_URL || 'http://127.0.0.1:8800'}/ml/explosive`;
           case "shipping":
-            return "http://127.0.0.1:8800/ml/transport";
+            return `${process.env.REACT_APP_ML_API_URL || 'http://127.0.0.1:8800'}/ml/transport`;
           default:
             throw new Error("Invalid category selected.");
         }

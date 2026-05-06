@@ -37,7 +37,7 @@ const Profile = () => {
       if (storedEmail) {
         try {
           const token = localStorage.getItem('token'); // Use token for authenticated requests
-          const response = await axios.get(`http://localhost:5000/api/user/${storedEmail}`, {
+          const response = await axios.get(`${process.env.REACT_APP_API_URL}/user/${storedEmail}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -65,7 +65,7 @@ const Profile = () => {
     const fetchData = async () => {
       try {
         const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
-        const emissionsResponse = await axios.get(`http://localhost:5000/api/data/${today}/${today}`);
+        const emissionsResponse = await axios.get(`${process.env.REACT_APP_API_URL}/data/${today}/${today}`);
         const todaysEmissionCO2 = calculateCO2Sum(emissionsResponse.data);
             
 
@@ -233,7 +233,7 @@ const Profile = () => {
       try {
         const token = localStorage.getItem('token');
         const response = await axios.post(
-          'http://localhost:5000/api/user/update-profile-picture',
+          `${process.env.REACT_APP_API_URL}/user/update-profile-picture`,
           formData,
           {
             headers: {
@@ -260,7 +260,7 @@ const Profile = () => {
       try {
         const token = localStorage.getItem('token');
         const response = await axios.put(
-          `http://localhost:5000/api/user/update-co2-goal/${userId}`,
+          `${process.env.REACT_APP_API_URL}/user/update-co2-goal/${userId}`,
           { CO2Goal: goal },
           {
             headers: {
@@ -288,7 +288,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        `http://localhost:5000/api/update-user-data/${user.id}`,
+        `${process.env.REACT_APP_API_URL}/update-user-data/${user.id}`,
         { [field]: updatedUserData[field] },
         {
           headers: {

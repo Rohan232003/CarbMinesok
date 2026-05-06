@@ -22,7 +22,7 @@ function ResetPassword() {
         return;
       }
 
-      const response = await axios.post('http://localhost:5000/api/reset-password', { token, password });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/reset-password`, { token, password });
       setSuccess(response.data.msg);
       setError('');
       
